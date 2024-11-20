@@ -76,7 +76,7 @@ const LoginPage = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 mt-2 border bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your password"
+                placeholder="Enter your a password"
               />
             </div>
 
