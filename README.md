@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-# maziwa-application
-maziwa applicataion 
+# UzaNow-application
+UzaNow applicataion 
 =======
 # Getting Started with Create React App
 
