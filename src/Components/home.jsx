@@ -29,7 +29,7 @@ const HomePage = () => {
         <p className="mt-4 text-base md:text-lg font-black text-white drop-shadow-sm   raunded p-2">
           The ultimate platform to enhance your shopping experience.
         </p>
-        <div className="mt-8">
+        <div className="mt-2">
           <Link
             to="Login"
             className="bg-blue-500 hover:bg-blue-600 text-white text-base md:text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"

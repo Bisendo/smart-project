@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
-import { MdContactMail, MdExitToApp, MdDashboard, MdNotifications } from "react-icons/md"; // Added Notifications Icon
+import { FaHome, FaUserCircle, FaArrowUp } from "react-icons/fa";
+import {
+  MdContactMail,
+  MdExitToApp,
+  MdDashboard,
+  MdNotifications,
+} from "react-icons/md"; // Added Notifications Icon
 import serviceImage from "../images/image8.jpg";
 
 const ServicePage = () => {
@@ -9,6 +14,13 @@ const ServicePage = () => {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -22,7 +34,7 @@ const ServicePage = () => {
         <div className="p-6">
           <h1 className="text-2xl font-bold text-white mb-4">UzaNow</h1>
         </div>
-        <nav className="space-y-2 ">
+        <nav className="space-y-2">
           <Link
             to="/"
             className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
@@ -88,87 +100,45 @@ const ServicePage = () => {
               size={24}
               className="text-white md:hidden cursor-pointer"
             />
+            {/* Profile Icon */}
+            <FaUserCircle
+              size={24}
+              className="text-white md:hidden cursor-pointer"
+            />
           </div>
 
-          {/* Notification for desktop */}
-          <MdNotifications
-            size={24}
-            className="text-white hidden md:block cursor-pointer"
-          />
+          {/* Notification and Profile for desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <MdNotifications size={24} className="text-white cursor-pointer" />
+            {/* Profile Icon */}
+            <FaUserCircle size={24} className="text-white cursor-pointer" />
+          </div>
         </header>
 
         {/* Content */}
         <div className="p-4 sm:p-6 bg-white">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Card 1 */}
-            <div className="bg-blue-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {/* Card Components */}
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="w-full overflow-hidden rounded-t-lg">
                 <img
                   src={serviceImage}
                   alt="Service"
-                  className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-auto mx-auto object-cover rounded shadow-lg"
+                  className="w-full h-48 object-cover rounded shadow-lg"
                 />
               </div>
               <div className="mt-4">
                 <p className="mt-2 text-black font-bold text-center">Bag</p>
                 <p className="mt-2 text-black font-bold text-center">
-                  Quantity <span className="font-black text-blue-700">: 12</span>
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
                 </p>
                 <p className="mt-2 text-black font-bold text-center">
                   Phone Number: <br />
-                  <span className="font-black text-blue-700">+255 655 344 222</span>
-                </p>
-                <p className="mt-2 text-gray-600 font-bold text-center">
-                  Tsh 12000/=
-                </p>
-                <div className="flex justify-center items-center">
-                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
-                    Add
-                  </button>
-                </div>
-              </div>
-            </div>  <div className="bg-blue-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="w-full overflow-hidden rounded-t-lg">
-                <img
-                  src={serviceImage}
-                  alt="Service"
-                  className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-auto mx-auto object-cover rounded shadow-lg"
-                />
-              </div>
-              <div className="mt-4">
-                <p className="mt-2 text-black font-bold text-center">Bag</p>
-                <p className="mt-2 text-black font-bold text-center">
-                  Quantity <span className="font-black text-blue-700">: 12</span>
-                </p>
-                <p className="mt-2 text-black font-bold text-center">
-                  Phone Number: <br />
-                  <span className="font-black text-blue-700">+255 655 344 222</span>
-                </p>
-                <p className="mt-2 text-gray-600 font-bold text-center">
-                  Tsh 12000/=
-                </p>
-                <div className="flex justify-center items-center">
-                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
-                    Add
-                  </button>
-                </div>
-              </div>
-            </div>  <div className="bg-blue-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="w-full overflow-hidden rounded-t-lg">
-                <img
-                  src={serviceImage}
-                  alt="Service"
-                  className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-auto mx-auto object-cover rounded shadow-lg"
-                />
-              </div>
-              <div className="mt-4">
-                <p className="mt-2 text-black font-bold text-center">Bag</p>
-                <p className="mt-2 text-black font-bold text-center">
-                  Quantity <span className="font-black text-blue-700">: 12</span>
-                </p>
-                <p className="mt-2 text-black font-bold text-center">
-                  Phone Number: <br />
-                  <span className="font-black text-blue-700">+255 655 344 222</span>
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
                 </p>
                 <p className="mt-2 text-gray-600 font-bold text-center">
                   Tsh 12000/=
@@ -181,23 +151,26 @@ const ServicePage = () => {
               </div>
             </div>
 
-            {/* Repeat other cards */}
-            <div className="bg-blue-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            {/* Repeat for other cards */}
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="w-full overflow-hidden rounded-t-lg">
                 <img
                   src={serviceImage}
                   alt="Service"
-                  className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-auto mx-auto object-cover rounded shadow-lg"
+                  className="w-full h-48 object-cover rounded shadow-lg"
                 />
               </div>
               <div className="mt-4">
                 <p className="mt-2 text-black font-bold text-center">Bag</p>
                 <p className="mt-2 text-black font-bold text-center">
-                  Quantity <span className="font-black text-blue-700">: 12</span>
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
                 </p>
                 <p className="mt-2 text-black font-bold text-center">
                   Phone Number: <br />
-                  <span className="font-black text-blue-700">+255 655 344 222</span>
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
                 </p>
                 <p className="mt-2 text-gray-600 font-bold text-center">
                   Tsh 12000/=
@@ -209,8 +182,265 @@ const ServicePage = () => {
                 </div>
               </div>
             </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={serviceImage}
+                  alt="Service"
+                  className="w-full h-48 object-cover rounded shadow-lg"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="mt-2 text-black font-bold text-center">Bag</p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Quantity{" "}
+                  <span className="font-black text-blue-700">: 12</span>
+                </p>
+                <p className="mt-2 text-black font-bold text-center">
+                  Phone Number: <br />
+                  <span className="font-black text-blue-700">
+                    +255 655 344 222
+                  </span>
+                </p>
+                <p className="mt-2 text-gray-600 font-bold text-center">
+                  Tsh 12000/=
+                </p>
+                <div className="flex justify-center items-center">
+                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* ...Your Card Components Here */}
           </div>
         </div>
+
+        {/* Scroll to Top Button */}
+        <button
+          onClick={handleScrollToTop}
+          className="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp size={20} />
+        </button>
       </main>
 
       {/* Overlay for Sidebar (Mobile Only) */}

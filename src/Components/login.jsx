@@ -39,7 +39,6 @@ const LoginPage = () => {
         {/* Form Section */}
         <div className="w-full lg:w-1/2 p-8">
           {/* Logo */}
-          
 
           {/* Login Form */}
           <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
@@ -48,7 +47,10 @@ const LoginPage = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Input */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-600"
+              >
                 Email
               </label>
               <input
@@ -65,7 +67,10 @@ const LoginPage = () => {
 
             {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-600">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-600"
+              >
                 Password
               </label>
               <input
@@ -92,9 +97,12 @@ const LoginPage = () => {
 
             {/* Forgot Password Link */}
             <div className="text-center">
-              <span className="text-black">Don't have an account?  </span>
-              <Link to="/register" className="text-sm text-blue-600 no-underline hover:underline">
-                Register 
+              <span className="text-black">Don't have an account? </span>
+              <Link
+                to="/register"
+                className="text-sm text-blue-600 no-underline hover:underline"
+              >
+                Register
               </Link>
             </div>
           </form>
