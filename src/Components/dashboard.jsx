@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
-import { FaServicestack } from "react-icons/fa";
+import { FaHome, FaServicestack, FaUserCircle } from "react-icons/fa";
 import { MdContactMail, MdExitToApp, MdNotifications } from "react-icons/md";
+import { FaArrowUp } from "react-icons/fa"; // Importing FaArrowUp
 import serviceImage from "../images/image7.jpg";
 import aboutImage from "../images/about.jpg";
 import contactImage from "../images/image3.jpg";
@@ -12,6 +12,11 @@ const Dashboard = () => {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -86,18 +91,24 @@ const Dashboard = () => {
           </button>
 
           {/* Logo and notification for mobile */}
-          <div className="flex items-center   space-x-4">
+          <div className="flex items-center space-x-4">
             <MdNotifications
+              size={24}
+              className="text-white md:hidden cursor-pointer"
+            />
+            {/* Profile Icon */}
+            <FaUserCircle
               size={24}
               className="text-white md:hidden cursor-pointer"
             />
           </div>
 
-          {/* Notification for desktop */}
-          <MdNotifications
-            size={24}
-            className="text-white hidden md:block cursor-pointer"
-          />
+          {/* Notification and Profile for desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <MdNotifications size={24} className="text-white cursor-pointer" />
+            {/* Profile Icon */}
+            <FaUserCircle size={24} className="text-white cursor-pointer" />
+          </div>
         </header>
 
         {/* Content */}
@@ -159,6 +170,14 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
+
+      {/* Scroll-to-top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-200"
+      >
+        <FaArrowUp size={24} />
+      </button>
 
       {/* Overlay for Sidebar (Mobile Only) */}
       {isSidebarOpen && (

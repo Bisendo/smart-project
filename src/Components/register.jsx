@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import registerImage from "../images/image1.jpg"; // Adjust path as needed
 
-
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -40,33 +39,37 @@ const LoginPage = () => {
         {/* Form Section */}
         <div className="w-full lg:w-1/2 p-8">
           {/* Logo */}
-          
 
           {/* Login Form */}
           <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
             Sign up to Your Account
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
-
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-600">
-           Full Name
-          </label>
-          <input
-           type="text"
-           id="name"
-           name="name"
-           value={formData.name}
-           onChange={handleChange}
-           required
-           className="w-full px-4 py-2 mt-2 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-           placeholder="Enter your full name"
-          />
-         </div>
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 mt-2 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your full name"
+              />
+            </div>
 
             {/* Email Input */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-600"
+              >
                 Email
               </label>
               <input
@@ -83,7 +86,10 @@ const LoginPage = () => {
 
             {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-600">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-600"
+              >
                 Password
               </label>
               <input
@@ -111,7 +117,10 @@ const LoginPage = () => {
             {/* Forgot Password Link */}
             <div className="text-center">
               <span className="text-black">If you have an account?</span>{" "}
-              <Link to="/dashboard" className="text-sm text-blue-600 no-underline hover:underline">
+              <Link
+                to="/dashboard"
+                className="text-sm text-blue-600 no-underline hover:underline"
+              >
                 Login
               </Link>
             </div>
@@ -123,15 +132,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-
-
-
-
-
-
-
-
-
-
-    
