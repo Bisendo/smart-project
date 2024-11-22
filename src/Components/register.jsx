@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import registerImage from "../images/image6.jpg"; // Adjust path as needed
+import registerImage from "../images/image1.jpg"; // Adjust path as needed
+
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -76,7 +77,7 @@ const LoginPage = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 mt-2 border bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter your email or Username"
+                placeholder="Enter your email "
               />
             </div>
 
@@ -122,3 +123,15 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+
+
+
+
+
+
+
+
+
+    

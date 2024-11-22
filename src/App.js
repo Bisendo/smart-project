@@ -5,6 +5,7 @@ import LoginPage from "./Components/login";
 import HomePage from "./Components/home";
 import RegisterPage from "./Components/register";
 import ServicePage from "./Components/service";
+import AboutUsPage from "./Components/aboutus";
 function App() {
   return (
     <div className="bg-gray-200 min-h-screen min-w-full">
@@ -18,6 +19,9 @@ function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/service" element={<ServicePage />} />
+      <Route path="/aboutus" element={<AboutUsPage />} />
+
+
 
 
       
