@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import loginImage from "../images/image1.jpg"; // Adjust path as needed
+import loginImage from "../images/login.jpg"; // Adjust path as needed
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -92,7 +92,7 @@ const LoginPage = () => {
 
             {/* Forgot Password Link */}
             <div className="text-center">
-              <span className="text-black">Don't have an account?</span>{" "}
+              <span className="text-black">Don't have an account?  </span>
               <Link to="/register" className="text-sm text-blue-600 no-underline hover:underline">
                 Register 
               </Link>
