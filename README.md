@@ -10,6 +10,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+**After clone from Github  go to the terminal and type**
+
+ ### `git clone https://github.com/Bisendo/smart-project.git`
+
+Then Type this command to install npm module
+
+### `npm install
+
+Then type this command to run you Application
+
 ### `npm start`
 
 Runs the app in the development mode.\
