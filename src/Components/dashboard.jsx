@@ -159,7 +159,7 @@ const Dashboard = () => {
               />
               <p className="mt-4 text-blue-600">
                 <Link
-                  to="/seller"
+                  to="/seller_login"
                   className="bg-blue-600 text-white px-4 p-2 hover:bg-sky-700 rounded"
                 >
                   Seller
