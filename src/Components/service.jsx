@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaUserCircle, FaArrowUp } from "react-icons/fa";
+import { FaHome, FaUserCircle,FaStore, FaArrowUp } from "react-icons/fa";
 import {
   MdContactMail,
   MdExitToApp,
@@ -39,8 +39,17 @@ const ServicePage = () => {
             to="/"
             className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
           >
-            <FaHome className="mr-2" />
+            <FaHome size={20} className="mr-2" />
             Home
+          </Link>
+
+
+          <Link
+            to="/seller_login"
+            className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
+          >
+            <FaStore size={20} color="white" className="mr-2" />
+            Seller
           </Link>
 
           <Link
