@@ -94,6 +94,11 @@ const LoginPage = () => {
                 Login
               </button>
             </div>
+                        {/* Login As Admin*/}
+                        <div className="text-center">
+                          Login as ? <Link to="/admin_login" className="text-blue-700 no-underline hover:underline mx-2">Admin</Link>
+                        </div> 
+
 
             {/* Forgot Password Link */}
             <div className="text-center">

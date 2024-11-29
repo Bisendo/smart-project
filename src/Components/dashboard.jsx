@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaServicestack, FaUserCircle } from "react-icons/fa";
+import { FaHome, FaServicestack, FaUserCircle, FaStore } from "react-icons/fa";
 import { MdContactMail, MdExitToApp, MdNotifications } from "react-icons/md";
+import { FaUserShield } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa"; // Importing FaArrowUp
 import serviceImage from "../images/image7.jpg";
-import aboutImage from "../images/about.jpg";
-import contactImage from "../images/image3.jpg";
+import SellerImage from "../images/about.jpg";
+import AdminImage from "../images/image3.jpg";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,7 +17,7 @@ const Dashboard = () => {
 
   // Scroll to top function
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -35,15 +36,31 @@ const Dashboard = () => {
             to="/"
             className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
           >
-            <FaHome className="mr-2" />
+            <FaHome size={20} className="mr-2" />
             Home
+          </Link>
+
+          <Link
+            to="/admin_login"
+            className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
+          >
+            <FaUserShield size={20} color="white" className="mr-2" />
+            Admin
+          </Link>
+
+          <Link
+            to="/seller_login"
+            className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
+          >
+            <FaStore size={20} color="white" className="mr-2" />
+            Seller
           </Link>
 
           <Link
             to="/service"
             className="block py-2.5 px-4 rounded hover:bg-blue-700 hover:text-white transition text-white duration-200 flex items-center"
           >
-            <FaServicestack className="mr-2" />
+            <FaServicestack size={20} className="mr-2" />
             Service
           </Link>
 
@@ -134,36 +151,36 @@ const Dashboard = () => {
 
             {/* Card 2 */}
             <div className="bg-gray-100 p-4 sm:p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold">About Us</h3>
+              <h3 className="text-lg font-semibold">Seller</h3>
               <img
-                src={aboutImage}
+                src={SellerImage}
                 alt="About Us"
                 className="mt-4 w-full rounded"
               />
               <p className="mt-4 text-blue-600">
                 <Link
-                  to="/service"
+                  to="/seller"
                   className="bg-blue-600 text-white px-4 p-2 hover:bg-sky-700 rounded"
                 >
-                  About us
+                  Seller
                 </Link>
               </p>
             </div>
 
             {/* Card 3 */}
             <div className="bg-gray-100 p-4 sm:p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold">Contact</h3>
+              <h3 className="text-lg font-semibold">Admin</h3>
               <img
-                src={contactImage}
+                src={AdminImage}
                 alt="Contact"
                 className="mt-4 w-full rounded"
               />
               <p className="mt-4 text-blue-600">
                 <Link
-                  to="/service"
+                  to="/admin_login  "
                   className="bg-blue-600 text-white px-4 p-2 hover:bg-sky-700 rounded"
                 >
-                  Contact
+                  Admin
                 </Link>
               </p>
             </div>

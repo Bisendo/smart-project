@@ -5,7 +5,6 @@ import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa"; // Importing FaArrowUp
 
 import {
-  MdContactMail,
   MdExitToApp,
   MdDashboard,
   MdBuild,
@@ -54,12 +53,7 @@ const AboutUsPage = () => {
             <MdBuild size={24} className="text-white" />
           </Link>
 
-          <Link
-            to="/aboutus"
-            className="text-white hover:bg-blue-700 p-2 rounded transition"
-          >
-            <MdContactMail size={24} />
-          </Link>
+         
 
           <Link
             to="/dashboard"
@@ -155,7 +149,7 @@ const AboutUsPage = () => {
             <a
               href="https://twitter.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer"Sign
               className="hover:text-blue-300"
             >
               <FaTwitter size={24} />
